@@ -1,0 +1,23 @@
+		public void quadForm(double a, double b, double c)
+		{
+			double dis = (b*b) - (4*a*c);
+			double result = (Math.sqrt(dis));
+			double r1 = (-b + result)/2*a;
+			double r2 = (-b - result)/2*a;	
+			
+			if (dis < 0)
+			{
+				int i = -1;
+				double x = (-b)/(2*a);
+				double answer = (Math.sqrt(dis*i))/(2*a);
+				System.out.println("The roots are imaginary: "+x+" + "+ +answer+ "i and "+x+" - "+answer+"i");
+			}
+				else if (dis > 0)
+				{
+					System.out.println("There are two roots: "+r1+" and "+r2);
+				}
+					else if (dis == 0)
+					{
+						System.out.println("There is only one root: "+r1);
+					}
+		}
