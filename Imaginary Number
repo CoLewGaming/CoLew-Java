@@ -1,0 +1,7 @@
+		public void imagNum(double x)
+		{
+			int i = -1;
+			double result = x * i;
+			double answer = Math.sqrt(result)*i;
+			System.out.println(answer+"i");
+		}	
