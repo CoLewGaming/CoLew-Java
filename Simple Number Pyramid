@@ -1,0 +1,26 @@
+		public void numPyr(int x) 
+		{
+			int num = x;
+			
+			for (int i = 1; i <= num; i++)
+			{
+				for (int j = num; j > 0; j--)
+					
+					if (j > i)
+						System.out.print("  ");
+					else
+						System.out.print(j + " ");
+					
+				for (int j = 2; j <= num; j ++)
+					
+					if (j > i)
+						System.out.print("  ");
+					else
+						System.out.print(j+" ");
+				
+			System.out.println();	
+			}
+		
+			
+		
+		}
