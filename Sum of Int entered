@@ -1,0 +1,25 @@
+		public static int sumDigits(long n)
+		{
+			// variables for code
+			long num = n;
+			int ans = 0;
+			int count = 0;
+			int total = 0;
+			// loop to itterate between breaking the number down and using mod
+			while(num != 0)
+			{	
+				// if the count is even than we use mod
+				if (count % 2 == 0)
+				{
+					ans = (int) (num % 10);
+					total = total + ans;
+				}
+					// if count is odd than we use division
+					else
+					{
+						num = num / 10;
+					}
+			count++;
+			} 
+			return total;
+}	
