@@ -1,27 +1,52 @@
-public class testTingTings {
+import java.util.Arrays;
+import java.util.Scanner;
+import java.lang.Math;
 
+public class stuff {
 	public static void main(String[] args) {
 		
 		int number = 9;
 		
-		int[][] pyr = new int[number*2-1][number+1];
+		int pyr[][] = new int [number*2+1][number+1];
 		
-		for(int i = number; i > 0; i--)
+		for(int i = 0; i <= number; i++)
 		{
-			for(int j = 0; j < number; j++)
+			for(int j = 1; j <= number; j++)
 			{
-				if(j > i)
-				pyr[i][j] = i;
+				if (j > i)
+				{
+					pyr[i][j] = j;
+				}
+					if (pyr[i][j] != 0)
+					{
+						System.out.print(pyr[i][j]+" ");
+					}
+						else
+						{
+							System.out.print("  ");
+						}
+			}	
 				
-				System.out.print(pyr[i][j]);
-				
-			}
-			System.out.println();
+				for(int k = number-1; k > 0; k--)
+				{
+					if (k > i)
+					{
+						pyr[i][k] = k;
+					}
+					
+						if (pyr[i][k] != 0)
+						{
+							System.out.print(pyr[i][k]+" ");
+						}
+							else
+							{
+								System.out.print("  ");
+							}
+					
+				}
+		System.out.println();
 		}
 		
-		
-		
-		
-	}
 
+	}
 }
