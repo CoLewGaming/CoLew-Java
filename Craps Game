@@ -1,0 +1,34 @@
+import java.lang.Math;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class testingtings {
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		
+		boolean play = false;
+		
+		while(play = true)
+		{
+			System.out.print("Press 1 to play again: ");
+			
+			String game = input.next();
+			int dice1 = (int) (Math.random()*10+1);
+			int dice2 = (int) (Math.random()*10+1);
+			
+			if (dice1 + dice2 > 12)
+				dice1 = dice1/2;
+				dice2 = dice2/3;
+
+			int answer = dice1+dice2;
+			
+			System.out.printf("%d + %d = %d\n",dice1,dice2,answer);
+			
+		}
+		
+		
+    }
+	
+}
