@@ -1,34 +1,68 @@
-import java.lang.Math;
+
 import java.util.Scanner;
-import java.util.Arrays;
+import java.lang.Math;
 
-public class testingtings {
+public class testing {
 	public static void main(String[] args) {
-		
-		Scanner input = new Scanner(System.in);
-		
-		
-		boolean play = false;
-		
-		while(play = true)
-		{
-			System.out.print("Press 1 to play again: ");
-			
-			String game = input.next();
-			int dice1 = (int) (Math.random()*10+1);
-			int dice2 = (int) (Math.random()*10+1);
-			
-			if (dice1 + dice2 > 12)
-				dice1 = dice1/2;
-				dice2 = dice2/3;
 
-			int answer = dice1+dice2;
-			
-			System.out.printf("%d + %d = %d\n",dice1,dice2,answer);
-			
+		 int dice1, dice2, total, total2;
+		 dice1 = (int) (Math.random()*6+1);
+		 dice2 = (int) (Math.random()*6+1);
+		 total = dice1 + dice2;
+		 total2 = dice1 + dice2;
+		
+		 boolean game = true;
+		 
+		while (game)
+		{
+			if(total == 11 || total == 7)
+			{
+				System.out.printf("%d + %d = %d \nYOU WIN!",dice1,dice2,total);
+				game = false;
+			}
+				else if(total == 2 || total == 3 || total == 12)
+				{
+					System.out.printf("%d + %d = %d \nYOU LOSE!",dice1,dice2,total);
+					game = false;
+				}
+					else
+					{
+						
+						for(int i = 0; i < 2; i++)
+						{
+							
+							dice1 = (int) (Math.random()*6+1);
+							dice2 = (int) (Math.random()*6+1);
+							
+							if (i < 1)
+							{
+								total = dice1 + dice2;
+								System.out.printf("You rolled %d + %d = %d\n",dice1,dice2,total);
+								System.out.println("Point is: "+total);
+							}
+							else
+							{
+								total2 = dice1 + dice2;
+							System.out.printf("You rolled %d + %d = %d\n",dice1,dice2,total2);
+							}
+		
+						}
+						if(total == total2)
+						{
+							System.out.println("YOU WIN");
+							game = false;
+						}
+							else 
+							{
+								System.out.println("YOU LOSE");
+								game = false;
+							}
+		
+				
+					}
 		}
 		
-		
-    }
-	
+
+	}
 }
+	
