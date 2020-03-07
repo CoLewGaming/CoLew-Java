@@ -1,68 +1,63 @@
-
-import java.util.Scanner;
-import java.lang.Math;
-
-public class testing {
-	public static void main(String[] args) {
-
-		 int dice1, dice2, total, total2;
-		 dice1 = (int) (Math.random()*6+1);
-		 dice2 = (int) (Math.random()*6+1);
-		 total = dice1 + dice2;
-		 total2 = dice1 + dice2;
-		
-		 boolean game = true;
-		 
-		while (game)
-		{
-			if(total == 11 || total == 7)
-			{
-				System.out.printf("%d + %d = %d \nYOU WIN!",dice1,dice2,total);
-				game = false;
-			}
-				else if(total == 2 || total == 3 || total == 12)
-				{
-					System.out.printf("%d + %d = %d \nYOU LOSE!",dice1,dice2,total);
-					game = false;
-				}
-					else
-					{
-						
-						for(int i = 0; i < 2; i++)
-						{
-							
-							dice1 = (int) (Math.random()*6+1);
-							dice2 = (int) (Math.random()*6+1);
-							
-							if (i < 1)
-							{
-								total = dice1 + dice2;
-								System.out.printf("You rolled %d + %d = %d\n",dice1,dice2,total);
-								System.out.println("Point is: "+total);
-							}
-							else
-							{
-								total2 = dice1 + dice2;
-							System.out.printf("You rolled %d + %d = %d\n",dice1,dice2,total2);
-							}
-		
-						}
-						if(total == total2)
-						{
-							System.out.println("YOU WIN");
-							game = false;
-						}
-							else 
-							{
-								System.out.println("YOU LOSE");
-								game = false;
-							}
-		
-				
-					}
-		}
-		
-
+public class testing{
+	public static void main(String[] args){
+	
+	Craps();
+	
 	}
+	
+	public static void Craps()
+        {
+                // initial variables for game
+                boolean game = true;
+                int dice1, dice2, total1, total2;
+                
+                dice1 = (int) (Math.random()*6+1);
+                dice2 = (int) (Math.random()*6+1);
+                total1 = dice1 + dice2;
+                
+                // Default win Scenario
+                if(total1 == 11 || total1 == 7)
+                {
+                	System.out.printf("You rolled %d + %d = %d \nYOU WIN!\n",dice1,dice2,total1);
+                    game = false;
+                }
+                	// default lose scenario
+                    else if(total1 == 2 || total1 == 3 || total1 == 12)
+                    {
+                    	System.out.printf("You rolled %d + %d = %d \nYOU LOSE!\n",dice1,dice2,total1);
+                    	game = false;
+                    }
+	                // if we get a 4,5,6,8,9,10 we make a loop and place the points required to win
+	                    else
+	                    {
+	                    	game = true;
+	                    	System.out.printf("You rolled %d + %d = %d \nPoint is:%d\n",dice1,dice2,total1,total1);
+	                    }
+                // loop to keep game going till we match or hit a 7
+                while (game)
+                {
+                	// making new dice and total to compare to the other total
+                	int redice1 = (int) (Math.random()*6+1);
+                	int redice2 = (int) (Math.random()*6+1);
+                	total2 = redice1 + redice2;
+                	// win scenario if the totals match
+                	if (total2 == total1)
+                	{
+                		System.out.printf("You Rolled %d + %d = %d\nYOU WIN\n",redice1,redice2,total2);
+                		break;
+                	}
+	                	// lose scenario if we hit a 7 on the re roll
+	                	else if (total2 == 7)
+	                	{
+	                		System.out.printf("You Rolled %d + %d = %d\nYOU LOSE\n",redice1,redice2,total2);
+	                		break;
+	                	}
+		                	// if we don't match or hit 7 we keep rolling
+		                	else
+		                		System.out.printf("You Rolled %d + %d = %d\n",redice1,redice2,total2,total1);
+		                	continue;
+                }
+        }
 }
+
 	
