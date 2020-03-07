@@ -1,0 +1,72 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+public class testing {
+	public static void main(String[] args) {
+
+		Craps();
+
+	}
+//Craps game percent
+	public static void Craps()
+	{
+		// Variables to itterate
+		int wins = 0;
+		int num = 0;
+		
+		// loop to play 10000 games
+		while(num < 10000)
+		{
+			// initial variables for game
+			boolean reRoll = true; 
+			int dice1, dice2, total1, total2;
+			dice1 = (int) (Math.random()*6+1);
+			dice2 = (int) (Math.random()*6+1);
+			total1 = dice1 + dice2;
+			
+			// Default win Scenario 
+			if(total1 == 11 || total1 == 7)
+			{
+				wins++;
+				num++;
+			}
+				// default lose scenario
+				else if(total1 == 2 || total1 == 3 || total1 == 12)
+				{
+					num++;
+					reRoll = false;
+				}
+					// if we get a 4,5,6,8,9,10 we make a loop
+					else
+					{
+						reRoll = true;
+					}
+			// loop to keep game going till we match or hit a 7
+			while (reRoll)
+			{
+				 // making new dice and total to compare to the other total
+				 int redice1 = (int) (Math.random()*6+1);
+				 int redice2 = (int) (Math.random()*6+1);
+				 total2 = redice1 + redice2;
+				 
+				 // win scenario if the totals match
+				 if (total2 == total1)
+				 {
+					 wins++;
+					 num++;
+					 break;
+				 }
+				 	 // lose scenario if we hit a 7 on the re roll
+					 else if (total2 == 7)
+					 {
+						
+						 num++;
+						 break;
+					 }
+			}				
+		}
+		System.out.printf("Out of %d games you won %d",num,wins);
+	}
+
+	
+}
