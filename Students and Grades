@@ -1,0 +1,70 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class testing{
+	public static void main(String[] args){
+	
+		Scanner input = new Scanner(System.in);
+		
+		// receiving the amount of students from user
+		System.out.print("Please enter the number of students: ");
+		int numStudent = input.nextInt();
+		
+		// array to hold the amount of students
+		int[] student = new int[numStudent];
+
+		// array to hold scores
+		int[] scores = new int[numStudent];
+		int max = scores[0];
+		
+		// receiving the scores from the user 
+		
+		System.out.printf("Enter the %d scores: ",numStudent);
+		// finding the highest score
+		for(int i = 1; i <= numStudent; i++)
+		{
+			scores[i-1] = input.nextInt();
+			if (scores[i-1]>max)
+			{
+				max = scores[i-1];
+			}
+		}
+			// itterating through the arrays to display proper scores
+			for (int j = 0; j < numStudent; j++)
+			{
+				int score = scores[j];
+				if(score - max >= -10)
+				{
+					System.out.printf("Student %d score is %d and grade is A\n",j,scores[j]);
+					continue;
+				}
+					else if(score - max >= -20)
+					{
+						System.out.printf("Student %d score is %d and grade is B\n", j,scores[j]);
+						continue;
+						
+					}
+						else if(score - max >= -30)
+						{
+							System.out.printf("Student %d score is %d and grade is C\n", j,scores[j]);
+							continue;
+							
+						}
+							else if(score - max >= -40)
+							{
+								System.out.printf("Student %d score is %d and grade is D\n", j,scores[j]);
+								continue;	
+							}
+								else
+								{
+									System.out.printf("Student %d score is %d and grade is F\n", j,scores[j]);
+									continue;
+								}
+
+			}
+
+			
+	}
+}
+
+	
