@@ -4,38 +4,31 @@ import java.util.Scanner;
 public class testing {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		
+		System.out.print("Enter your numbers here: ");
+		// variables for program
 		int[] numbers = new int[10];
 		int userNum = 0;
-		int count = 0;
 		int distinct = 0;
-		while(1 == 1)
+		
+		for(int i = 0; i < 10; i++)
 		{
-			if(count < 10)
-			{
 			userNum = input.nextInt();
+			// making all index to 0
+			numbers[i] = 0;
+			// adding to index
 			numbers[userNum-1]++;
-			count++;
-			}
-			
-			else
-				break;
-		}
-		
-		
-		for(int i = 0; i < numbers.length; i++)
-		{
-			
+			// if the index is greater than 0 we add 1 to show a new number
 			if(numbers[i]!=0)
-			numbers[i] = i +1;
-			distinct ++;
+				distinct ++;
 		}
 		
-		System.out.printf("The number of distinct numbers is: %d", distinct);
-		for(int j = 0; j < distinct; j++)
+		System.out.printf("The number of distinct numbers is: %d\n", distinct);
+		
+		for(int j = 0; j < 10; j++)
 		{
-			if(numbers[i-1]!=0)
-				System.ou
+			// only printing the index that has a number greater than 0
+			if(numbers[j]!=0)
+			{
+				System.out.printf("%d ",j+1);
+			}
 		}
-	}
-}
