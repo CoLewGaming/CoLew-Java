@@ -1,0 +1,29 @@
+               public class testing{
+                  public static main void (String[] args) {
+               // 6.10 calling method
+                System.out.println("6.10 Primes to 10000");
+                int count = 0;
+                for (int i = 2; i < 10000; i++)
+                {
+                        if(isPrime(i)==true)
+                        {
+                                count++;
+                        }
+                }
+                System.out.println("The amount of prime numbers from 1-10000 is: "+count);
+      }
+        //6.10 method
+        public static boolean isPrime(int number)
+        {
+                for (int divisor = 2; divisor <= number / 2; divisor++)
+                {
+                        if(number % divisor == 0)
+                        {
+                                return false;
+                        }
+                }
+                return true;
+        }
+
+      
+    }
