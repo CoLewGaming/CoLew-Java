@@ -1,0 +1,57 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class yeth{
+	public static void main(String[] args){
+		
+		Scanner inputArray1 = new Scanner(System.in);
+		Scanner inputArray2 = new Scanner(System.in);
+		
+		double[][] array1 = new double [3][3];
+		double[][] array2 = new double [3][3];
+		double[][] results = new double[3][3];
+		
+		for(int i = 0; i < 3; i++)
+		{
+			for(int j = 0; j < 3; j++)
+			{
+				array1[i][j] = inputArray1.nextDouble();
+				array2[i][j] = inputArray2.nextDouble();
+				results[i][j] = array1[i][j] + array2[i][j];
+			}
+		
+		}
+		
+		int count = 0;
+		for(int i = 0; i < 3; i++)
+		{
+			for(int j = 0; j < 3; j++)
+				System.out.print(array1[i][j] + " ");
+			
+			if(i != 1)
+				System.out.print(" ");
+			else
+				System.out.print("+");
+			
+			
+			for( int j = 0; j < 3; j++)
+				System.out.print(" "+array1[i][j]);
+			
+			
+			if(i != 1)
+				System.out.print("   ");
+			else
+				System.out.print(" = ");
+		
+			
+			for (int j = 0; j < 3; j++)
+				System.out.print(results[i][j]+" ");
+
+			System.out.println("");
+			
+		}
+		
+		
+	}
+
+}	
