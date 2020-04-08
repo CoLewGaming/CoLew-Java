@@ -1,0 +1,38 @@
+        public static void numCounter()
+        {
+                Scanner input = new Scanner(System.in);
+                System.out.print("Enter your numbers here: ");
+
+                int userNum = 200;
+                int[] numbers = new int[userNum];
+
+                // making all slots in array 0
+                for(int i = 0; i < 200; i++)
+                {
+                        numbers[i] = 0;
+                }
+
+                while(1 == 1)
+                {
+                        // making program itterate each number entered
+                        userNum = input.nextInt();
+
+                        // if the number is not 0 then we add 1 to the index of userNum-1
+                        if(userNum != 0)
+                        numbers[userNum-1]++;
+
+                        else
+                                break;
+                }
+
+                // output to user
+                for(int i = 0; i < numbers.length; i++)
+                {
+                // if the index of numbers i = int then i += 1
+                if (numbers[i] != 0 && numbers[i] == 1)
+                        System.out.printf("%d was entered %d time\n",i+1,numbers[i]);
+
+                else if (numbers[i] != 0 && numbers[i] > 1)
+                        System.out.printf("%d was entered %d times\n", i+1, numbers[i]);
+                }
+        }
