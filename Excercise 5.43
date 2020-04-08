@@ -1,0 +1,29 @@
+
+                // finding combo of two digits
+                System.out.println("Showing the different combos from console input, 5.43");
+                Scanner inputCombo = new Scanner(System.in);
+                System.out.println("Enter two digits to see all the possible combos between them: ");
+                // collecting data from console
+                int num1 = inputCombo.nextInt();
+                int num2 = inputCombo.nextInt();
+                // counter to say how many different combos there are
+                int count = 0;
+                // initial for loop to have proper line spacing
+                for (int i = num1; i < num2; i++)
+                {
+                        // this loop displays the numbers a set amount of times
+                        for (int j = num2; j > num1; j--)
+                        {
+                                // biggest key here is j>i this helps stop the print statment from duplicates
+                                if(j!=i && j > i)
+                                {
+                                        // displaying the numbers possible
+                                        System.out.print(i+""+j+"   ");
+                                        count++;
+                                }
+                        }
+                        // creating new line
+                        System.out.println("");
+                        }
+                // displaying the amount of combos to user
+                System.out.printf("There are %d possible ways for the numbers you selected",count);
