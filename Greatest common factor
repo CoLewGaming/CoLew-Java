@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class testing {
+	public static void main(String[] args) {
+  
+  //Getting the input from the user
+	Scanner input = new Scanner(System.in);
+	System.out.print("Please enter two numbers to see the gcd: ");
+  
+  // converting the users input into int values
+	int m = input.nextInt();
+	int n = input.nextInt();
+  
+  // using the method to display the gcd of the numbers entered by the user 
+	System.out.print("The greatest common factor " + gcd(m,n));
+
+	}
+	
+	public static int gcd(int m, int n)
+	{
+		// simple swith in the case that a user enters M less than N
+		int hold = 0;
+		if (m < n)
+		{
+			hold = m;
+			m = n;
+			n = hold;
+		}
+		
+		// return statements giving us our gcd 
+		if(m % n == 0)
+			return n;
+		
+		else
+			return gcd(n,m%n);
+			
+	}
+	
+}
