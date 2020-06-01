@@ -1,0 +1,41 @@
+// Corey Lewis
+// Using an array to display the occurrences of a number with the random function
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class testing {
+   public static void main(String[] args) {
+	   
+	   // creating random function
+	   Random rand = new Random();
+	   // +1 so I can get an even 10 numbers without an error
+	   int[] numbers = new int[10+1];
+	   
+	   // displaying before the for loops so it is only printed a single time
+	   System.out.println("Number		Appears");
+	   
+	   // making every position in the array equal to 0
+	   for(int i = 0; i <= 10; i++)
+	   {
+		 numbers[i] = 0;
+	   }
+	   
+	   // setting array position to add each time a number is repeated or for first occurrence
+	   for(int j = 1; j <= 10; j++)
+	   {
+		   int n = rand.nextInt(5);
+		   // n += 1 to ensure I get a number from 1 - 5
+		   n+=1;
+		   // ensuring the array is updated each itteration in the for loop
+		   numbers[n - 1] += 1;
+		   
+	   }
+	   // displaying the amount of times the integer was generated from the random function
+	   for(int k = 1; k <= 5; k++)
+	   {
+		   System.out.println(" "+ k + "\t\t  " + numbers[k-1]);
+	   }
+  
+   }
+}
