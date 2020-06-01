@@ -1,0 +1,38 @@
+// Corey Lewis
+// Displaying the future age using a method based off the users input
+
+
+import java.util.Scanner;
+
+public class testing {
+   public static void main(String[] args) {
+	   
+	   Scanner input = new Scanner(System.in);
+	   
+	   // gathering information needed to run method futureAge()
+	   System.out.print("Please enter your Name: ");
+	   String Name = input.next();
+	   
+	   System.out.print("Please enter your current age: ");
+	   int age = input.nextInt();
+	   
+	   System.out.print("Please enter you future age: ");
+	   int futureYear = input.nextInt();
+	   
+	   // Calling method for data and display
+	   futureAge(Name, age, futureYear);
+  
+	   
+   }
+   
+   // method to display results to user
+   public static void futureAge(String name, int age, int futureYear)
+   {
+	   // simple math to figure out how old the person will be by subtracting 2020 from the future year and adding the age for a total
+	   int futureAge = (futureYear - 2020 + age);
+	   
+	   // output to user that will display the Name, future age and the future year they entered 
+	   System.out.printf("%s will be %d years old in the year %d",name,futureAge,futureYear);
+   }
+   
+}
